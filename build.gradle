@@ -1,0 +1,27 @@
+apply plugin: 'groovy'
+
+sourceCompatibility = 1.8
+version = '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+configurations {
+    provided
+    compile.extendsFrom provided
+}
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.3.6'
+    compile 'org.apache.logging.log4j:log4j-core:2.2'
+    compile 'org.apache.logging.log4j:log4j-slf4j-impl:2.2'
+    provided 'javax:javaee-api:7.0'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile ('org.jglue.cdi-unit:cdi-unit:3.+'){exclude group:'org.jboss.weld'}
+    testCompile 'org.javassist:javassist:3.+'
+    testCompile 'com.cyrusinnovation:mockito-groovy-support:1.+'
+    testCompile 'org.hamcrest:hamcrest-library:1.+'
+    testCompile 'org.mockito:mockito-core:1.+'
+    testCompile 'org.jboss.weld:weld-core:2.2.4.Final'
+}
