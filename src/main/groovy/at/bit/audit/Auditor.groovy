@@ -8,8 +8,8 @@ import javax.interceptor.Interceptor
 import javax.interceptor.InvocationContext
 /**
  * Created by pbayer.*/
-@Interceptor
 @Audited
+@Interceptor
 class Auditor {
 
     @Inject

@@ -10,11 +10,11 @@ import javax.inject.Inject
 class HelloWorldBean {
 
     @Inject
-    private MessageProvider messageProvider
+    MessageProvider messageProvider
 
     String sayHelloWorld() {
         if (!messageProvider.getMessage()) {
-            throw new NullPointerException('Message is not set')
+            throw new NullPointerException('No message is provided')
         }
         "Hello World $messageProvider.message".toString()
     }

@@ -26,7 +26,7 @@ class CustomerController {
      * @return the customer with the lowest id
      * @throws NoCustomersFoundException if there are no customers
      */
-    Customer fechFirstCustomer() throws NoCustomersFoundException {
+    Customer fetchFirstCustomer() throws NoCustomersFoundException {
         if (!customers) {
             throw new NoCustomersFoundException()
         }
